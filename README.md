@@ -39,6 +39,8 @@ Better FreeAndNil                 0.55             9.57
 
 In short: FreeAndNil costs the same as Free. When X is nil, the "if" saves about 0.6-0.7 ns per call. When X holds an object, the "if" makes no difference you can rely on. The numbers move by a few tenths of a nanosecond between runs and between builds, so run it on your own machine.
 
+![The VCL front end of the benchmark](screenshot.png)
+
 ## How to run it
 
 - `FreeAndNilBenchConsole.dpr` - console program, RTL units only, compiles in a stock Delphi. It prints the report and saves it as `Results - Win32.txt` or `Results - Win64.txt` beside the exe.
