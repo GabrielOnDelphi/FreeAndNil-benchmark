@@ -111,8 +111,8 @@
     <DCC_RangeChecking>false</DCC_RangeChecking>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-    <VerInfo_Build>3</VerInfo_Build>
-    <VerInfo_Keys>CompanyName=GM;FileDescription=Gabriel Moraru;FileVersion=0.1.0.3;InternalName=FreeAndNilBench;LegalCopyright=Gabriel Moraru;LegalTrademarks=Gabriel Moraru;OriginalFilename=;ProductName=FreeAndNilBench;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+    <VerInfo_Build>4</VerInfo_Build>
+    <VerInfo_Keys>CompanyName=GM;FileDescription=Gabriel Moraru;FileVersion=0.1.0.4;InternalName=FreeAndNilBench;LegalCopyright=Gabriel Moraru;LegalTrademarks=Gabriel Moraru;OriginalFilename=;ProductName=FreeAndNilBench;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
   </PropertyGroup>
   <ItemGroup>
     <DelphiCompile Include="$(MainSource)">
