@@ -45,7 +45,7 @@ In short: FreeAndNil costs the same as Free. When X is nil, the "if" saves about
 
 - `FreeAndNilBenchConsole.dpr` - console program, RTL units only, compiles in a stock Delphi. It prints the report and saves it as `Results - Win32.txt` or `Results - Win64.txt` beside the exe.
 - `FreeAndNilBench.Core.pas` - the measuring unit. Call `RunFreeAndNilBenchmark` from your own program.
-- `FreeAndNilBench.dpr` - my VCL front end (a button and a memo, see `screenshot.png`). It uses my [LightSaber](https://github.com/GabrielOnDelphi/Delphi-LightSaber) library and the Autopilot for Delphi bridge, so use the console program if you do not have them.
+- `FreeAndNilBench.dpr` - my VCL front end (a button and a memo, see `screenshot.png`). It uses my [LightSaber](https://github.com/GabrielOnDelphi/Delphi-LightSaber) library and the bridge unit of [Autopilot for Delphi](https://gabrielmoraru.com/my-delphi-code/autopilot-for-delphi/) (the `Bridge` folder of [its GitHub repository](https://github.com/GabrielOnDelphi/Autopilot-for-Delphi)), which lets an AI assistant drive the running app. Fix the library paths in the `.dpr`, or use the console program.
 
 Build in Release mode: a debug memory manager changes the cost of freeing.
 
