@@ -44,7 +44,10 @@ begin
       AppData:= TAppData.Create(AppName, '', MultiThreaded);
       Application.MainFormOnTaskbar:= TRUE;
       AppData.CreateMainForm(TfrmMain, asFull);
-      Autopilot.Bridge.Vcl.StartBridge;     // Safe no-op unless AUTOPILOT is defined (Debug only)
+
+      { Autopilot for Delphi hands the controls of this running app to an AI assistant such as Claude: it clicks controls, types text, reads labels, sets and reads properties, takes screenshots. The AI tests the GUI for you, no human at the keyboard.
+        https://gabrielmoraru.com/my-delphi-code/autopilot-for-delphi/ }
+      Autopilot.Bridge.Vcl.StartBridge;    // Safe no-op unless AUTOPILOT is defined (Debug only)
       AppData.Run;
     end;
 end.
