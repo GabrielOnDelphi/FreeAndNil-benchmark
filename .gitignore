@@ -1,0 +1,19 @@
+# Private: notes and links about Embarcadero's private beta forum
+CLAUDE.md
+.claude/
+*.lnk
+*.url
+
+# Delphi build output
+*.exe
+*.dcu
+*.map
+*.drc
+*.identcache
+*.local
+*.dsk
+*.stat
+*.delphilsp.json
+37.0_*/
+__history/
+__recovery/
