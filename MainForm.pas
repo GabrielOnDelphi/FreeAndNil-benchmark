@@ -12,17 +12,19 @@ INTERFACE
 
 uses
   System.SysUtils, System.Classes, System.UITypes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.StdCtrls,
-  LightVcl.Visual.AppDataForm;
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.StdCtrls;
 
 type
-  TfrmMain = class(TLightForm)
+  TfrmMain = class(TForm)
     btnRun: TButton;
     mmoReport: TMemo;
     procedure btnRunClick(Sender: TObject);
   private
   public
   end;
+
+var
+  frmMain: TfrmMain;
 
 
 IMPLEMENTATION {$R *.dfm}

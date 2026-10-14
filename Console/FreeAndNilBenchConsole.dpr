@@ -12,7 +12,7 @@ program FreeAndNilBenchConsole;
 uses
   System.SysUtils,
   System.IOUtils,
-  FreeAndNilBench.Core in 'FreeAndNilBench.Core.pas';
+  FreeAndNilBench.Core in '..\FreeAndNilBench.Core.pas';
 
 const
   {$IFDEF WIN64}

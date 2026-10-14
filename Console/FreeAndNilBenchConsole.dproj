@@ -54,7 +54,7 @@
     <DelphiCompile Include="$(MainSource)">
       <MainSource>MainSource</MainSource>
     </DelphiCompile>
-    <DCCReference Include="FreeAndNilBench.Core.pas" />
+    <DCCReference Include="..\FreeAndNilBench.Core.pas" />
     <BuildConfiguration Include="Base">
       <Key>Base</Key>
     </BuildConfiguration>
