@@ -1,7 +1,7 @@
 program FreeAndNilBench;
 
 uses
-  {$IFDEF DEBUG}FastMM4, {$ENDIF}
+  {$IFDEF DEBUG}FastMM4,{$ENDIF}
 
   System.SysUtils,
   System.IOUtils,
@@ -9,10 +9,7 @@ uses
   Vcl.Styles,
   MainForm in 'MainForm.pas' {frmMain},
   FreeAndNilBench.Core in 'FreeAndNilBench.Core.pas',
-  LightVcl.Visual.AppData in 'c:\Projects\LightSaber\FrameVCL\LightVcl.Visual.AppData.pas',
-  LightVcl.Visual.AppDataForm in 'c:\Projects\LightSaber\FrameVCL\LightVcl.Visual.AppDataForm.pas',
-  LightCore.AppData in 'c:\Projects\LightSaber\LightCore.AppData.pas',
-  Autopilot.Bridge.Vcl in 'c:\Projects\Projects AI\Autopilot for Delphi\Source\Bridge\Autopilot.Bridge.Vcl.pas',
+  {$IFDEF AUTOPILOT}Autopilot.Bridge.Vcl in 'c:\Projects\Projects AI\Autopilot for Delphi\Source\Bridge\Autopilot.Bridge.Vcl.pas',{$ENDIF}{Optional}
   Vcl.Forms;
 
 {$R *.res}
@@ -32,22 +29,20 @@ end;
 
 
 begin
-  CONST
-     MultiThreaded= FALSE;                 // True => Only if we need to use multithreading in the Log.
-  CONST
-     AppName= 'FreeAndNilBench';           // Absolutely critical if you use the SaveForm/LoadForm functionality. This string will be used as the name of the INI file.
-
-  if System.SysUtils.FindCmdLineSwitch('run')   // LightCore.AppData has a deprecated FindCmdLineSwitch that hides the RTL one
+  if FindCmdLineSwitch('run')
   then RunFromCommandLine
   else
     begin
-      AppData:= TAppData.Create(AppName, '', MultiThreaded);
+      Application.Initialize;
       Application.MainFormOnTaskbar:= TRUE;
-      AppData.CreateMainForm(TfrmMain, asFull);
+      Application.CreateForm(TfrmMain, frmMain);
 
-      { Autopilot for Delphi hands the controls of this running app to an AI assistant such as Claude: it clicks controls, types text, reads labels, sets and reads properties, takes screenshots. The AI tests the GUI for you, no human at the keyboard.
-        https://gabrielmoraru.com/autopilot-for-delphi/ }
-      Autopilot.Bridge.Vcl.StartBridge;    // Safe no-op unless AUTOPILOT is defined (Debug only)
-      AppData.Run;
+      { Optional: Via Autopilot, Claude can run/debug/test this program for you.
+        For example, press "Run benchmark" & check the results in mmoReport.
+        Don't have AUTOPILOT? Undefine $AUTOPILOT or get it from www.GabrielMoraru.com }
+      {$IFDEF AUTOPILOT}
+       Autopilot.Bridge.Vcl.StartBridge;
+      {$ENDIF}
+      Application.Run;
     end;
 end.
