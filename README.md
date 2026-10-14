@@ -37,6 +37,8 @@ if Assigned + FreeAndNil          0.37            10.09
 Better FreeAndNil                 0.55             9.57
 ```
 
+Your numbers will differ a little. Within one build, the "X is nil" column repeats almost exactly. But a rebuild can move a whole row by about 0.2 ns, because the code lands at a different address (the screenshot below comes from another build than the table). So trust only the differences that keep their sign in every run and every build.
+
 Conclusion: FreeAndNil costs the same as Free. When X is nil, the "if" saves about 0.6-0.7 ns per call. When X holds an object, the "if" makes no difference you can rely on. 
 
 ![The VCL front end of the benchmark](screenshot.png)

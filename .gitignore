@@ -1,4 +1,4 @@
-# Private: notes and links about Embarcadero's private beta forum
+# Private notes and links, not part of the benchmark
 CLAUDE.md
 .claude/
 *.lnk
@@ -8,6 +8,7 @@ CLAUDE.md
 *.exe
 *.dcu
 *.map
+*.rsm
 *.drc
 *.identcache
 *.local
